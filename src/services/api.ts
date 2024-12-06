@@ -1,6 +1,11 @@
 import axios from "axios";
 import { ApiResponse } from "@/types/api";
-import { RegisterRequest, RegisterResponse } from "@/types/auth";
+import {
+  LoginRequest,
+  LoginResponse,
+  RegisterRequest,
+  RegisterResponse,
+} from "@/types/auth";
 
 export const BASE_URL = "https://moneyfulpublicpolicy.co.kr";
 
@@ -41,6 +46,10 @@ export const authAPI = {
     data: RegisterRequest
   ): Promise<ApiResponse<RegisterResponse>> => {
     const response = await api.post("/register", data);
+    return response.data;
+  },
+  login: async (data: LoginRequest): Promise<ApiResponse<LoginResponse>> => {
+    const response = await api.post("/login", data);
     return response.data;
   },
 };
