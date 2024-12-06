@@ -1,4 +1,6 @@
 import axios from "axios";
+import { ApiResponse } from "@/types/api";
+import { RegisterRequest, RegisterResponse } from "@/types/auth";
 
 export const BASE_URL = "https://moneyfulpublicpolicy.co.kr";
 
@@ -32,3 +34,13 @@ api.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
+// authAPI 추가
+export const authAPI = {
+  register: async (
+    data: RegisterRequest
+  ): Promise<ApiResponse<RegisterResponse>> => {
+    const response = await api.post("/register", data);
+    return response.data;
+  },
+};
