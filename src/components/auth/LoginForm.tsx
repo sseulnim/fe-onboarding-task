@@ -54,7 +54,8 @@ const LoginForm = () => {
       await loginMutation(formData);
       alert("로그인이 완료되었습니다.");
       navigate("/profile");
-    } catch {
+    } catch (error) {
+      console.log("로그인 에러:", error);
       alert("로그인에 실패했습니다.");
     }
   };
