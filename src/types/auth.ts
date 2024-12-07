@@ -37,4 +37,19 @@ export interface LoginResponse {
   avatar: string | null;
   nickname: string;
   success: boolean;
+  message?: string;
+}
+
+// 프로필 업데이트
+export interface ProfileUpdateRequest {
+  nickname?: string;
+  avatar?: File;
+}
+
+// 프로필 업데이트 응답
+export interface ProfileUpdateResponse {
+  avatar: string | null;
+  nickname: string;
+  message: string;
+  success: boolean;
 }

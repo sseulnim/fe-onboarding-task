@@ -1,6 +1,10 @@
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { api, authAPI } from "@/services/api";
-import type { LoginRequest, RegisterRequest } from "@/types/auth";
+import type {
+  LoginRequest,
+  ProfileUpdateRequest,
+  RegisterRequest,
+} from "@/types/auth";
 import { useAuthStore } from "@/store/authStore";
 
 // 쿼리 키
@@ -36,12 +40,28 @@ export const useLoginMutation = () => {
   return useMutation({
     mutationFn: (data: LoginRequest) => authAPI.login(data),
     onSuccess: (response) => {
-      if (response.success) {
-        localStorage.setItem("accessToken", response.data.accessToken);
+      localStorage.setItem("accessToken", response.accessToken);
+      setUser({
+        id: response.userId,
+        nickname: response.nickname,
+        avatar: response.avatar ?? undefined,
+      });
+    },
+  });
+};
+
+// 프로필 업데이트
+export const useUpdateProfileMutation = () => {
+  const { user, setUser } = useAuthStore(); // user도 함께 가져오기
+
+  return useMutation({
+    mutationFn: (data: ProfileUpdateRequest) => authAPI.updateProfile(data),
+    onSuccess: (response) => {
+      if (user) {
         setUser({
-          id: response.data.userId,
-          nickname: response.data.nickname,
-          avatar: response.data.avatar ?? undefined,
+          ...user,
+          nickname: response.nickname,
+          avatar: response.avatar ?? undefined,
         });
       }
     },
