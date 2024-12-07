@@ -9,7 +9,7 @@ import RegisterPage from "@/pages/RegisterPage";
 import ProfilePage from "@/pages/ProfilePage";
 import PrivateRoute from "@/components/auth/PrivateRoute";
 import PublicRoute from "@/components/auth/PublicRoute";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+// import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import TodoListPage from "./pages/TodoListPage";
 import TodoDetailPage from "./pages/TodoDetailPage";
 function App() {
@@ -32,7 +32,7 @@ function App() {
         {/* Default Route */}
         <Route path="/" element={<Navigate to="/login" replace />} />
       </Routes>
-      <ReactQueryDevtools initialIsOpen={false} />
+      {/* <ReactQueryDevtools initialIsOpen={false} buttonPosition="bottom-right" /> */}
     </Router>
   );
 }
