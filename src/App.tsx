@@ -10,7 +10,8 @@ import ProfilePage from "@/pages/ProfilePage";
 import PrivateRoute from "@/components/auth/PrivateRoute";
 import PublicRoute from "@/components/auth/PublicRoute";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
-
+import TodoListPage from "./pages/TodoListPage";
+import TodoDetailPage from "./pages/TodoDetailPage";
 function App() {
   return (
     <Router>
@@ -19,6 +20,8 @@ function App() {
         <Route element={<PublicRoute />}>
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
+          <Route path="/todos" element={<TodoListPage />} />
+          <Route path="/todos/:id" element={<TodoDetailPage />} />
         </Route>
 
         {/* Private Routes */}
