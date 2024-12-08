@@ -5,11 +5,11 @@ import {
   Navigate,
 } from "react-router-dom";
 import * as Sentry from "@sentry/react";
-import LoginPage from "@/pages/LoginPage";
-import RegisterPage from "@/pages/RegisterPage";
-import ProfilePage from "@/pages/ProfilePage";
-import PrivateRoute from "@/components/auth/PrivateRoute";
-import PublicRoute from "@/components/auth/PublicRoute";
+import LoginPage from "./pages/LoginPage";
+import RegisterPage from "./pages/RegisterPage";
+import ProfilePage from "./pages/ProfilePage";
+import PrivateRoute from "./components/auth/PrivateRoute";
+import PublicRoute from "./components/auth/PublicRoute";
 import TodoListPage from "./pages/TodoListPage";
 import TodoDetailPage from "./pages/TodoDetailPage";
 import ErrorFallback from "./components/ErrorFallback";

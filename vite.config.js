@@ -5,8 +5,9 @@ import path from "path";
 export default defineConfig({
   plugins: [react()],
   build: {
-    sourcemap: true,
-    outDir: "dist",
+    rollupOptions: {
+      external: [/@pages\/.*/, /@components\/.*/],
+    },
   },
   resolve: {
     alias: {
