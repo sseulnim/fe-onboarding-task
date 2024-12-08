@@ -1,5 +1,6 @@
 import { useTodosQuery } from "@/hooks/queries/useTodoQuery";
 import { Link } from "react-router-dom";
+import ErrorTest from "@/components/ErrorTest";
 
 const TodoListPage = () => {
   const { data: todos, isLoading, error } = useTodosQuery();
@@ -10,6 +11,7 @@ const TodoListPage = () => {
   return (
     <div className="p-4">
       <h1 className="text-2xl font-bold mb-4">Todo List</h1>
+      <ErrorTest />
       <div className="space-y-2">
         {todos?.map((todo) => (
           <div key={todo.id} className="p-4 border rounded hover:bg-gray-50">
