@@ -74,7 +74,7 @@ VITE_SENTRY_DSN=[your-sentry-dsn]
 - 번들 크기 최적화
 - 테스트 파일 제외 설정
 
-## 🚀 배포 (https://fe-onboarding-task.vercel.app)
+## 🚀 배포 (https://fe-onboarding-task-1.vercel.app)
 
 - Vercel을 통한 자동 배포
 - 환경변수 설정 및 관리
