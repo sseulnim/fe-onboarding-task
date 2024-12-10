@@ -3,6 +3,15 @@
 ## 📌 소개
 Jest를 활용한 테스트와 Sentry를 통한 에러 모니터링 구현 과제
 
+### 🛠️ 주요 구현 내용
+
+- 프론트엔드 인증/인가 기능 구현
+- Jest를 활용한 단위 테스트 구현
+- Sentry를 통한 실시간 에러 모니터링 시스템 구축
+
+상세한 구현 과정과 기술적 고찰은 링크에서 확인하실 수 있습니다:
+[프론트엔드 개발 온보딩 과제](https://www.notion.so/React-154d2635765680e7b4ade9b8f3393f36?pvs=21)
+
 ## 🛠 기술 스택
 React 18 | TypeScript | Vite | Zustand | TanStack Query | Jest | Sentry | Tailwind CSS | Vercel
 
